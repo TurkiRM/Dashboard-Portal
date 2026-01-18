@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تركي الحجيلي | مبرمج ومحلل بيانات</title>
+    <title>تركي رزيق | مبرمج ومحلل بيانات</title>
     <link rel="icon" type="image/png" href="logo.png">
     
     <style>
@@ -36,7 +36,6 @@
             border-top: 10px solid var(--progress-blue);
         }
 
-        /* Header Section */
         .header {
             text-align: center;
             border-bottom: 1px solid #EEE;
@@ -90,7 +89,6 @@
         }
         .whatsapp-link:hover { transform: scale(1.05); }
 
-        /* Form Styling */
         .form-group { margin-bottom: 25px; text-align: right; }
         label { display: block; font-weight: bold; margin-bottom: 10px; font-size: 0.95em; }
         
@@ -139,20 +137,39 @@
         }
         .submit-btn:hover { background: #166D3B; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(31, 138, 76, 0.2); }
 
-        /* Social Media */
+        /* Social Media Footer */
         .social-footer {
             margin-top: 40px;
             text-align: center;
             padding-top: 25px;
             border-top: 1px solid #EEE;
         }
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
         .social-links a {
             text-decoration: none;
-            margin: 0 15px;
-            font-size: 15px;
+            font-size: 14px;
             font-weight: bold;
+            padding: 8px 12px;
+            border-radius: 8px;
+            background: #f8f9fa;
+            transition: 0.3s;
+            border: 1px solid #eee;
         }
+        .social-links a:hover { transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
         
+        /* Icons Colors */
+        .yt { color: #FF0000; }
+        .x-tw { color: #000000; }
+        .tk { color: #000000; border-left: 3px solid #ff0050 !important; }
+        .ig { color: #E1306C; }
+        .sc { color: #FFFC00; background: #333 !important; }
+
         #file-name-display {
             margin-top: 10px;
             display: block;
@@ -168,7 +185,7 @@
 <div class="container">
     <div class="header">
         <img src="logo.jpeg" alt="Logo" class="profile-logo" onerror="this.src='https://via.placeholder.com/110?text=LOGO'">
-        <h1>تركي الحجيلي</h1>
+        <h1>تركي رزيق</h1>
         <div class="credentials">
             مبرمج ومحلل بيانات معتمد من وزارة الموارد البشرية
             <div class="license-container">
@@ -183,19 +200,19 @@
         
         <div class="form-group">
             <label>الاسم بالكامل</label>
-            <input type="text" name="اسم_العميل" placeholder="أدخل اسمك الكريم" required>
+            <input type="text" name="Client_Name" placeholder="أدخل اسمك الكريم" required>
         </div>
 
         <div class="form-group">
             <label>رقم الجوال</label>
-            <input type="tel" name="رقم_التواصل" placeholder="05xxxxxxxx" required>
+            <input type="tel" name="Phone_Number" placeholder="05xxxxxxxx" required>
         </div>
 
         <div class="form-group">
             <label>إرفاق ملف البيانات (Excel, CSV, Power BI)</label>
             <div class="upload-area" onclick="document.getElementById('fileUpload').click()">
                 <span id="file-label">📁 اضغط لاختيار الملفات المطلوبة للتحليل</span>
-                <input type="file" name="ملف_البيانات" id="fileUpload" hidden onchange="showName()">
+                <input type="file" name="Data_File" id="fileUpload" hidden onchange="showName()">
                 <span id="file-name-display"></span>
             </div>
         </div>
@@ -203,29 +220,31 @@
         <div class="form-group">
             <label>شرح متطلبات المشروع</label>
             <div class="voice-section">
-                <textarea name="وصف_المشروع" rows="3" placeholder="اكتب هنا الأهداف والنتائج المطلوبة من التحليل..."></textarea>
+                <textarea name="Requirements" rows="3" placeholder="اكتب هنا الأهداف والنتائج المطلوبة من التحليل..."></textarea>
                 <div style="margin-top:15px; border-top: 1px solid #f0d8bd; padding-top: 10px;">
                     <label style="font-size: 13px; color: var(--launch-orange);">🎙️ هل تفضل الشرح صوتاً؟ ارفع التسجيل هنا:</label>
-                    <input type="file" name="تسجيل_صوتي" accept="audio/*">
+                    <input type="file" name="Voice_Note" accept="audio/*">
                 </div>
             </div>
         </div>
 
         <div class="form-group">
             <label>تاريخ التسليم المطلوب (Deadline)</label>
-            <input type="date" name="تاريخ_التسليم" required>
+            <input type="date" name="Deadline_Date" required>
         </div>
 
         <input type="text" name="_gotcha" style="display:none">
-
         <button type="submit" class="submit-btn">إرسال الطلب والمرفقات</button>
     </form>
 
     <div class="social-footer">
-        <p style="font-size: 13px; color: #888; margin-bottom: 15px;">تواصل معي عبر المنصات التالية</p>
+        <p style="font-size: 13px; color: #888; margin-bottom: 5px;">تواصل معي عبر المنصات التالية</p>
         <div class="social-links">
-            <a href="https://youtube.com/@turkialhujili?si=xp-mvwbddj7XH_YU" style="color: #FF0000;">YouTube 📺</a>
-            <a href="https://x.com/AlhujiliTurki" style="color: #000000;">X (Twitter) 𝕏</a>
+            <a href="https://youtube.com/@turkialhujili?si=xp-mvwbddj7XH_YU" class="yt">YouTube 📺</a>
+            <a href="https://x.com/AlhujiliTurki" class="x-tw">𝕏 (Twitter)</a>
+            <a href="https://www.tiktok.com/@turki.alhujili?_r=1&_t=ZS-93AKEUzZYXA" class="tk">TikTok ♪</a>
+            <a href="https://www.instagram.com/turkialhujili?igsh=MWdkbWVvN2VyZHU0ag==" class="ig">Instagram 📸</a>
+            <a href="https://www.snapchat.com/add/turki_alhujili?share_id=o6NiNGBZW5M&locale=fr-FR" class="sc">Snapchat </a>
         </div>
     </div>
 </div>
