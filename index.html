@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>تركي رزيق | مبرمج ومحلل بيانات</title>
-    <link rel="icon" type="image/png" href="logo.png">
-    
     <style>
         :root {
             --excellence-green: #1F8A4C;
@@ -27,130 +25,68 @@
 
         .container {
             background: white;
-            max-width: 600px;
+            max-width: 550px;
             width: 100%;
-            padding: 40px;
+            padding: 35px;
             border-radius: 20px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.07);
             border-top: 10px solid var(--progress-blue);
         }
 
-        .header {
-            text-align: center;
-            border-bottom: 1px solid #EEE;
-            padding-bottom: 30px;
-            margin-bottom: 30px;
-        }
-
-        .profile-logo {
-            width: 110px;
-            height: 110px;
-            border-radius: 50%;
-            border: 3px solid var(--progress-blue);
-            margin-bottom: 15px;
-            object-fit: cover;
-            background: #fff;
-        }
-
-        h1 { margin: 10px 0; font-size: 26px; color: var(--progress-blue); }
+        .header { text-align: center; border-bottom: 1px solid #EEE; padding-bottom: 20px; margin-bottom: 25px; }
+        .profile-logo { width: 100px; height: 100px; border-radius: 50%; border: 3px solid var(--progress-blue); margin-bottom: 10px; }
+        h1 { margin: 5px 0; font-size: 24px; color: var(--progress-blue); }
         
-        .credentials { 
-            color: #555; 
-            font-size: 15px; 
-            line-height: 1.8; 
-            margin-bottom: 10px; 
-        }
-
-        .license-container { margin: 15px 0; }
-
         .license { 
-            background: #E8F0FE; 
-            color: var(--progress-blue); 
-            padding: 6px 14px; 
-            border-radius: 8px; 
-            font-family: monospace; 
-            font-weight: bold;
-            display: inline-block;
-            margin: 5px;
-            border: 1px solid #D0E1FD;
+            background: #E8F0FE; color: var(--progress-blue); padding: 4px 10px; 
+            border-radius: 6px; font-family: monospace; font-weight: bold; font-size: 13px;
         }
 
-        .form-group { margin-bottom: 25px; text-align: right; }
-        label { display: block; font-weight: bold; margin-bottom: 10px; font-size: 0.95em; }
+        .form-group { margin-bottom: 20px; text-align: right; }
+        label { display: block; font-weight: bold; margin-bottom: 8px; font-size: 0.9em; }
         
         input, textarea {
-            width: 100%;
-            padding: 14px;
-            border: 1.5px solid #E0E0E0;
-            border-radius: 12px;
-            box-sizing: border-box;
-            font-size: 16px;
-            background: #FCFCFC;
-            transition: 0.3s;
+            width: 100%; padding: 12px; border: 1.5px solid #E0E0E0;
+            border-radius: 10px; box-sizing: border-box; font-size: 16px;
         }
-        input:focus, textarea:focus { border-color: var(--progress-blue); outline: none; background: #fff; }
+
+        .price-box {
+            background: #FFF9F2;
+            border: 1px dashed var(--launch-orange);
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .price-amount {
+            display: block;
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--excellence-green);
+        }
 
         .submit-btn {
-            background: #25D366; /* WhatsApp Green */
-            color: white;
-            border: none;
-            padding: 18px;
-            width: 100%;
-            border-radius: 12px;
-            font-size: 19px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.4s;
-            margin-top: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            text-decoration: none;
+            background: #25D366; color: white; border: none; padding: 16px;
+            width: 100%; border-radius: 10px; font-size: 18px; font-weight: bold;
+            cursor: pointer; transition: 0.3s; display: flex; align-items: center; justify-content: center; gap: 10px;
         }
-        .submit-btn:hover { background: #1da851; transform: translateY(-3px); }
+        .submit-btn:hover { background: #1da851; transform: translateY(-2px); }
 
-        .social-footer {
-            margin-top: 40px;
-            text-align: center;
-            padding-top: 25px;
-            border-top: 1px solid #EEE;
-        }
-        .social-links {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 15px;
-        }
-        .social-links a {
-            text-decoration: none;
-            font-size: 13px;
-            font-weight: bold;
-            padding: 8px 10px;
-            border-radius: 8px;
-            background: #f8f9fa;
-            border: 1px solid #eee;
-        }
-        
-        .yt { color: #FF0000; }
-        .x-tw { color: #000000; }
-        .ig { color: #E1306C; }
+        .note { font-size: 12px; color: #777; line-height: 1.5; margin-top: 5px; }
+
+        .social-links { display: flex; justify-content: center; gap: 10px; margin-top: 20px; border-top: 1px solid #eee; padding-top: 15px; }
+        .social-links a { text-decoration: none; font-size: 12px; color: #666; padding: 5px 8px; border: 1px solid #eee; border-radius: 5px; }
     </style>
 </head>
 <body>
 
 <div class="container">
     <div class="header">
-        <img src="logo.jpeg" alt="Logo" class="profile-logo" onerror="this.src='https://via.placeholder.com/110?text=LOGO'">
+        <img src="logo.jpeg" alt="Logo" class="profile-logo" onerror="this.src='https://via.placeholder.com/100'">
         <h1>تركي رزيق</h1>
-        <div class="credentials">
-            مبرمج ومحلل بيانات معتمد من وزارة الموارد البشرية
-            <div class="license-container">
-                <span class="license">FL-14032327 💻</span>
-                <span class="license">FL-531730147 📊</span>
-            </div>
-        </div>
+        <p style="font-size: 14px; color: #666;">مبرمج ومحلل بيانات معتمد</p>
+        <span class="license">FL-14032327 💻</span>
+        <span class="license">FL-531730147 📊</span>
     </div>
 
     <div class="form-group">
@@ -159,18 +95,31 @@
     </div>
 
     <div class="form-group">
-        <label>شرح متطلبات المشروع</label>
-        <textarea id="requirements" rows="4" placeholder="اكتب هنا الأهداف والنتائج المطلوبة..."></textarea>
+        <label>عدد ملفات الإكسل (Files)</label>
+        <input type="number" id="fileCount" value="1" min="1" oninput="calculatePrice()">
     </div>
 
     <div class="form-group">
-        <label>تاريخ التسليم المطلوب (Deadline)</label>
-        <input type="date" id="deadline">
+        <label>إجمالي عدد الأعمدة في جميع الملفات (Total Columns)</label>
+        <input type="number" id="columnCount" value="5" min="1" oninput="calculatePrice()">
+        <div class="note">
+            * السعر 100 ريال لكل ملف (حتى 5 أعمدة).<br>
+            * كل عمود إضافي يتجاوز الحد المسموح يكلف 20 ريال.
+        </div>
+    </div>
+
+    <div class="price-box">
+        <span style="font-size: 14px; color: #555;">التكلفة التقديرية</span>
+        <span class="price-amount"><span id="totalPrice">100</span> ريال</span>
+    </div>
+
+    <div class="form-group">
+        <label>شرح إضافي للمشروع</label>
+        <textarea id="requirements" rows="3" placeholder="اكتب هنا الأهداف المطلوبة..."></textarea>
     </div>
 
     <button type="button" onclick="sendToWhatsApp()" class="submit-btn">
-        <span>إرسال التفاصيل عبر واتساب</span>
-        <span>💬</span>
+        إرسال التفاصيل والسعر عبر واتساب 💬
     </button>
 
     <div class="social-footer">
@@ -184,25 +133,47 @@
         </div>
     </div>
 </div>
+</div>
 
 <script>
+    function calculatePrice() {
+        const fileCount = parseInt(document.getElementById('fileCount').value) || 0;
+        const totalColumns = parseInt(document.getElementById('columnCount').value) || 0;
+        
+        const basePricePerFile = 100;
+        const allowedColumns = fileCount * 5;
+        
+        // Initial cost based on number of files
+        let total = fileCount * basePricePerFile;
+
+        // Add 20 SAR for every column that exceeds the allowed limit (5 per file)
+        if (totalColumns > allowedColumns) {
+            total += (totalColumns - allowedColumns) * 20;
+        }
+
+        document.getElementById('totalPrice').innerText = total;
+        return total;
+    }
+
     function sendToWhatsApp() {
         const name = document.getElementById('clientName').value;
+        const files = document.getElementById('fileCount').value;
+        const cols = document.getElementById('columnCount').value;
+        const price = document.getElementById('totalPrice').innerText;
         const req = document.getElementById('requirements').value;
-        const date = document.getElementById('deadline').value;
         const phone = "966543116571";
 
-        if (!name || !req) {
-            alert("يرجى ملء الاسم والمتطلبات أولاً");
+        if (!name) {
+            alert("يرجى إدخال الاسم");
             return;
         }
 
-        // Creating the encoded message
-        const message = `مرحباً أستاذ تركي،%0A%0A` +
+        const message = `*طلب تحليل بيانات جديد*%0A%0A` +
                         `*الاسم:* ${name}%0A` +
-                        `*المتطلبات:* ${req}%0A` +
-                        `*تاريخ التسليم:* ${date}%0A%0A` +
-                        `أود تزويدك بالملفات المطلوبة لبدء التحليل.`;
+                        `*عدد الملفات:* ${files}%0A` +
+                        `*إجمالي الأعمدة:* ${cols}%0A` +
+                        `*السعر التقديري:* ${price} ريال%0A%0A` +
+                        `*التفاصيل:* ${req || 'لا يوجد تفاصيل إضافية'}`;
 
         window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
     }
