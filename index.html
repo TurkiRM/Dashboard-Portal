@@ -85,8 +85,8 @@
         <img src="logo.jpeg" alt="Logo" class="profile-logo" onerror="this.src='https://via.placeholder.com/100'">
         <h1>تركي رزيق</h1>
         <p style="font-size: 14px; color: #666;">مبرمج ومحلل بيانات معتمد</p>
-        <span class="license">FL-14032327 💻 </span>
-        <span class="license">📊 FL-531730147</span>
+        <span class="license">FL-14032327 💻</span>
+        <span class="license">📊FL-531730147 </span>
     </div>
 
     <div class="form-group">
@@ -103,14 +103,14 @@
         <label>إجمالي عدد الأعمدة في جميع الملفات (Total Columns)</label>
         <input type="number" id="columnCount" value="5" min="1" oninput="calculatePrice()">
         <div class="note">
-            * السعر 100 ريال لكل ملف (حتى 5 أعمدة).<br>
+            * السعر 200 ريال لكل ملف (حتى 10 أعمدة).<br>
             * كل عمود إضافي يتجاوز الحد المسموح يكلف 20 ريال.
         </div>
     </div>
 
     <div class="price-box">
         <span style="font-size: 14px; color: #555;">التكلفة التقديرية</span>
-        <span class="price-amount"><span id="totalPrice">100</span> ريال</span>
+        <span class="price-amount"><span id="totalPrice">200</span> ريال</span>
     </div>
 
     <div class="form-group">
@@ -140,8 +140,8 @@
         const fileCount = parseInt(document.getElementById('fileCount').value) || 0;
         const totalColumns = parseInt(document.getElementById('columnCount').value) || 0;
         
-        const basePricePerFile = 100;
-        const allowedColumns = fileCount * 5;
+        const basePricePerFile = 200;
+        const allowedColumns = fileCount * 10;
         
         // Initial cost based on number of files
         let total = fileCount * basePricePerFile;
