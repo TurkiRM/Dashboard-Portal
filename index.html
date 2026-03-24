@@ -11,7 +11,6 @@
             --excellence-green: #1F8A4C;
             --progress-blue: #3D69B1;
             --launch-orange: #F49D42;
-            --prep-red: #D91E18;
             --bg-light: #F4F7F9;
             --text-dark: #2C3E50;
         }
@@ -28,7 +27,7 @@
 
         .container {
             background: white;
-            max-width: 700px;
+            max-width: 600px;
             width: 100%;
             padding: 40px;
             border-radius: 20px;
@@ -62,9 +61,7 @@
             margin-bottom: 10px; 
         }
 
-        .license-container {
-            margin: 15px 0;
-        }
+        .license-container { margin: 15px 0; }
 
         .license { 
             background: #E8F0FE; 
@@ -78,21 +75,10 @@
             border: 1px solid #D0E1FD;
         }
 
-        .whatsapp-link {
-            display: inline-block;
-            margin-top: 10px;
-            color: #25D366;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 19px;
-            transition: 0.3s;
-        }
-        .whatsapp-link:hover { transform: scale(1.05); }
-
         .form-group { margin-bottom: 25px; text-align: right; }
         label { display: block; font-weight: bold; margin-bottom: 10px; font-size: 0.95em; }
         
-        input, textarea, select {
+        input, textarea {
             width: 100%;
             padding: 14px;
             border: 1.5px solid #E0E0E0;
@@ -102,28 +88,10 @@
             background: #FCFCFC;
             transition: 0.3s;
         }
-        input:focus { border-color: var(--progress-blue); outline: none; background: #fff; box-shadow: 0 0 8px rgba(61, 105, 177, 0.15); }
-
-        .upload-area {
-            border: 2px dashed var(--progress-blue);
-            padding: 30px;
-            text-align: center;
-            border-radius: 15px;
-            background: #F9FBFF;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .upload-area:hover { background: #F0F5FF; border-color: var(--excellence-green); }
-
-        .voice-section {
-            background: #FFF9F2;
-            border: 1px solid var(--launch-orange);
-            padding: 20px;
-            border-radius: 15px;
-        }
+        input:focus, textarea:focus { border-color: var(--progress-blue); outline: none; background: #fff; }
 
         .submit-btn {
-            background: var(--excellence-green);
+            background: #25D366; /* WhatsApp Green */
             color: white;
             border: none;
             padding: 18px;
@@ -134,10 +102,14 @@
             cursor: pointer;
             transition: 0.4s;
             margin-top: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-decoration: none;
         }
-        .submit-btn:hover { background: #166D3B; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(31, 138, 76, 0.2); }
+        .submit-btn:hover { background: #1da851; transform: translateY(-3px); }
 
-        /* Social Media Footer */
         .social-footer {
             margin-top: 40px;
             text-align: center;
@@ -148,36 +120,22 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 15px;
+            gap: 10px;
             margin-top: 15px;
         }
         .social-links a {
             text-decoration: none;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: bold;
-            padding: 8px 12px;
+            padding: 8px 10px;
             border-radius: 8px;
             background: #f8f9fa;
-            transition: 0.3s;
             border: 1px solid #eee;
         }
-        .social-links a:hover { transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
         
-        /* Icons Colors */
         .yt { color: #FF0000; }
         .x-tw { color: #000000; }
-        .tk { color: #000000; border-left: 3px solid #ff0050 !important; }
         .ig { color: #E1306C; }
-        .sc { color: #FFFC00; background: #333 !important; }
-
-        #file-name-display {
-            margin-top: 10px;
-            display: block;
-            font-size: 13px;
-            color: var(--excellence-green);
-            font-weight: bold;
-        }
-
     </style>
 </head>
 <body>
@@ -193,69 +151,60 @@
                 <span class="license">FL-531730147 📊</span>
             </div>
         </div>
-        <a href="https://wa.me/966543116571" class="whatsapp-link">🟢 واتساب: 966543116571</a>
     </div>
 
-    <form action="https://formspree.io/f/mjgggzzw" method="POST" enctype="multipart/form-data">
-        
-        <div class="form-group">
-            <label>الاسم بالكامل</label>
-            <input type="text" name="Client_Name" placeholder="أدخل اسمك الكريم" required>
-        </div>
+    <div class="form-group">
+        <label>الاسم بالكامل</label>
+        <input type="text" id="clientName" placeholder="أدخل اسمك الكريم">
+    </div>
 
-        <div class="form-group">
-            <label>رقم الجوال</label>
-            <input type="tel" name="Phone_Number" placeholder="05xxxxxxxx" required>
-        </div>
+    <div class="form-group">
+        <label>شرح متطلبات المشروع</label>
+        <textarea id="requirements" rows="4" placeholder="اكتب هنا الأهداف والنتائج المطلوبة..."></textarea>
+    </div>
 
-        <div class="form-group">
-            <label>إرفاق ملف البيانات (Excel, CSV, Power BI)</label>
-            <div class="upload-area" onclick="document.getElementById('fileUpload').click()">
-                <span id="file-label">📁 اضغط لاختيار الملفات المطلوبة للتحليل</span>
-                <input type="file" name="Data_File" id="fileUpload" hidden onchange="showName()">
-                <span id="file-name-display"></span>
-            </div>
-        </div>
+    <div class="form-group">
+        <label>تاريخ التسليم المطلوب (Deadline)</label>
+        <input type="date" id="deadline">
+    </div>
 
-        <div class="form-group">
-            <label>شرح متطلبات المشروع</label>
-            <div class="voice-section">
-                <textarea name="Requirements" rows="3" placeholder="اكتب هنا الأهداف والنتائج المطلوبة من التحليل..."></textarea>
-                <div style="margin-top:15px; border-top: 1px solid #f0d8bd; padding-top: 10px;">
-                    <label style="font-size: 13px; color: var(--launch-orange);">🎙️ هل تفضل الشرح صوتاً؟ ارفع التسجيل هنا:</label>
-                    <input type="file" name="Voice_Note" accept="audio/*">
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label>تاريخ التسليم المطلوب (Deadline)</label>
-            <input type="date" name="Deadline_Date" required>
-        </div>
-
-        <input type="text" name="_gotcha" style="display:none">
-        <button type="submit" class="submit-btn">إرسال الطلب والمرفقات</button>
-    </form>
+    <button type="button" onclick="sendToWhatsApp()" class="submit-btn">
+        <span>إرسال التفاصيل عبر واتساب</span>
+        <span>💬</span>
+    </button>
 
     <div class="social-footer">
         <p style="font-size: 13px; color: #888; margin-bottom: 5px;">تواصل معي عبر المنصات التالية</p>
         <div class="social-links">
-            <a href="https://youtube.com/@turkialhujili?si=xp-mvwbddj7XH_YU" class="yt">YouTube 📺</a>
-            <a href="https://x.com/AlhujiliTurki" class="x-tw">𝕏 (Twitter)</a>
-            <a href="https://www.tiktok.com/@turki.alhujili?_r=1&_t=ZS-93AKEUzZYXA" class="tk">TikTok ♪</a>
-            <a href="https://www.instagram.com/turkialhujili?igsh=MWdkbWVvN2VyZHU0ag==" class="ig">Instagram 📸</a>
-            <a href="https://www.snapchat.com/add/turki_alhujili?share_id=o6NiNGBZW5M&locale=fr-FR" class="sc">Snapchat </a>
+            <a href="https://youtube.com/@turkialhujili" class="yt">YouTube</a>
+            <a href="https://x.com/AlhujiliTurki" class="x-tw">𝕏</a>
+            <a href="https://www.tiktok.com/@turki.alhujili" class="tk">TikTok</a>
+            <a href="https://www.instagram.com/turkialhujili" class="ig">Instagram</a>
+            <a href="https://www.snapchat.com/add/turki_alhujili" class="sc">Snapchat</a>
         </div>
     </div>
 </div>
 
 <script>
-    function showName() {
-        var fileInput = document.getElementById('fileUpload');
-        var nameDisplay = document.getElementById('file-name-display');
-        if (fileInput.files.length > 0) {
-            nameDisplay.innerText = "تم اختيار ملف: " + fileInput.files[0].name;
+    function sendToWhatsApp() {
+        const name = document.getElementById('clientName').value;
+        const req = document.getElementById('requirements').value;
+        const date = document.getElementById('deadline').value;
+        const phone = "966543116571";
+
+        if (!name || !req) {
+            alert("يرجى ملء الاسم والمتطلبات أولاً");
+            return;
         }
+
+        // Creating the encoded message
+        const message = `مرحباً أستاذ تركي،%0A%0A` +
+                        `*الاسم:* ${name}%0A` +
+                        `*المتطلبات:* ${req}%0A` +
+                        `*تاريخ التسليم:* ${date}%0A%0A` +
+                        `أود تزويدك بالملفات المطلوبة لبدء التحليل.`;
+
+        window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
     }
 </script>
 
